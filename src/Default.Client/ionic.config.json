@@ -1,0 +1,7 @@
+{
+  "name": "Default.Client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

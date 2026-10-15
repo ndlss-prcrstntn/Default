@@ -1,0 +1,28 @@
+# Secrets / local overrides
+*.local.json
+*.local
+.env
+.env.*
+!.env.example
+**/appsettings.Development.local.json
+
+# Build / deps
+**/bin/
+**/obj/
+**/node_modules/
+**/dist/
+**/www/
+.angular/
+
+# IDE / OS
+.vs/
+.idea/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Logs / coverage
+*.log
+coverage/
+TestResults/

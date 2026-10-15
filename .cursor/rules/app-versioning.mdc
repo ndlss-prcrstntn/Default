@@ -1,0 +1,35 @@
+---
+description: Semver policy — bump src/VERSION on every PR
+alwaysApply: true
+---
+
+# App versioning (`src/VERSION`)
+
+Source of truth: `src/VERSION` (semver `MAJOR.MINOR.PATCH`). Assembly and `GET /version` (if exposed) read it via `Directory.Build.props`.
+
+## When creating a PR
+
+1. **Bump `src/VERSION` in the same PR** (do not leave it unchanged).
+2. Default bump for a normal PR: **MINOR** (`0.2.0` → `0.3.0`).
+3. Use **PATCH** only for tiny, isolated fixes (typo, one-liner bug, copy tweak). Prefer MINOR if unsure.
+4. Use **MAJOR** only for product-shape changes that alter how users experience the product. Not for routine features/refactors.
+
+## Pre-prod vs prod
+
+- **Before public prod:** keep `0.x.y`. Each PR = minor bump. Do not jump to `1.0.0` early.
+- **First public prod release:** set **`1.0.0`** (explicit release decision, not every PR).
+- **After `1.0.0`:** same rules — PR ≈ minor; patch rare; major rare and product-format only.
+
+## Examples
+
+| Change | Bump |
+| --- | --- |
+| New feature, filter, admin UI, seed data | MINOR |
+| Copy tweak, CSS contrast, one-liner bug | PATCH |
+| New primary content surface / product format | MAJOR |
+| First public launch | `1.0.0` |
+
+## Checklist before PR create
+
+- [ ] `src/VERSION` bumped appropriately
+- [ ] Commit includes the VERSION change

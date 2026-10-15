@@ -1,0 +1,45 @@
+---
+description: Per-module CHANGELOG.md history and code comment expectations
+alwaysApply: true
+---
+
+# Module change history + comments
+
+## CHANGELOG.md (required for meaningful module work)
+
+Every backend module, infrastructure library, host (`Default.Api`), and client (`Default.Client`) keeps a `CHANGELOG.md` at its root.
+
+When you make a **substantive** change to a module:
+
+1. Add a dated entry at the top of that module’s `CHANGELOG.md` (`### YYYY-MM-DD — short title`).
+2. Write 1–5 bullets on **what changed in substance** (behavior, contract, invariants).
+3. Do **not** list every touched file.
+4. Skip pure typos/formatting-only edits.
+5. If several modules change, update each affected `CHANGELOG.md`.
+6. Still bump `src/VERSION` per app-versioning rules.
+
+Paths:
+
+- `src/Modules/Default.*/CHANGELOG.md`
+- `src/Infrastructure/Default.*/CHANGELOG.md`
+- `src/Default.Api/CHANGELOG.md`
+- `src/Default.Client/CHANGELOG.md`
+
+`AGENT_CONTEXT.md` / `README.md` = current truth. `CHANGELOG.md` = history. Do not dump full history into AGENT_CONTEXT.
+
+## Comments
+
+Prefer **why** over **what** (code already shows what).
+
+Required when non-obvious:
+
+- Public APIs / exported helpers: short summary (`///` in C#, `/** */` in TS).
+- Invariants, security/auth gates, key naming, theme/layout constraints.
+- Temporary disables / restore paths (keep a short checklist in a comment).
+
+Avoid:
+
+- Narrating every line (`// increment i`).
+- Huge commented-out blocks except intentional restore snapshots.
+
+When editing a file with missing context comments on the touched public surface, add a brief one — do not mass-comment the whole repo unprompted.

@@ -1,0 +1,12 @@
+{
+  "jwt": {
+    "Secret": "CHANGE_ME_set_via_user_secrets_or_env_min_32_chars________________"
+  },
+  "dataAccess": {
+    "connection": "Server=localhost;Port=5432;Database=default;Username=postgres;Password=CHANGE_ME;Timeout=60;CommandTimeout=120;Maximum Pool Size=100;Minimum Pool Size=10;"
+  },
+  "s3": {
+    "accessKey": "CHANGE_ME",
+    "accessKeySecret": "CHANGE_ME"
+  }
+}

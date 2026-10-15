@@ -1,0 +1,33 @@
+---
+description: EF migrations — only via add-migration (keeps Designer + snapshot intact)
+alwaysApply: true
+---
+
+# EF Core migrations
+
+## Required: create only via `add-migration`
+
+Never hand-write a new migration `.cs` (with or without Designer). That breaks the `*.Designer.cs` / `*ModelSnapshot.cs` pair and EF history.
+
+```powershell
+# From repo root — preferred
+.\scripts\add-migration.ps1 <MigrationName>
+
+# Equivalent (adjust host project / output dir)
+dotnet ef migrations add <MigrationName> `
+  --project src/Default.Api/Default.Api.csproj `
+  --output-dir DataAccess/Migrations
+```
+
+## After the command
+
+1. Confirm **both** were generated: `YYYYMMDDHHMMSS_<Name>.cs` **and** `YYYYMMDDHHMMSS_<Name>.Designer.cs`, plus snapshot update.
+2. Put custom SQL / data backfill only in `Up`/`Down` of the generated `.cs` (not Designer).
+3. Do **not** edit `*.Designer.cs` or `*ModelSnapshot.cs` by hand.
+4. Do **not** invent a migration that only has the main `.cs` and skips Designer.
+
+## Forbidden
+
+- Creating `*Migration*.cs` with Write / copy-paste / empty stub
+- Copying an old Designer and renaming it
+- Committing a migration without its matching Designer

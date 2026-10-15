@@ -1,0 +1,24 @@
+# Default.Abstractions — Change History
+
+Краткая история **сутевых** изменений модуля (не список файлов).
+Новые записи — сверху. Формат даты: `YYYY-MM-DD`.
+
+## Как вести
+
+- Писать 1–5 пунктов «что изменилось по сути» после заметного изменения модуля.
+- Не перечислять каждый файл; достаточно поведения, контракта, инвариантов.
+- Мелкие правки (опечатки, форматирование) можно не фиксировать.
+- Связанный bump версии приложения: `src/VERSION`.
+
+## Entries
+
+### 2026-10-11 — Storefront artist event filter
+
+- `IStorefrontEventFilterTarget` exposes `ArtistId`; when set, storefront event scope is skipped so artist cards can list the full schedule.
+
+### 2026-10-03 — Rename to example.com
+
+- Идентификаторы проекта теперь Default.*; публичный домен пока остаётся example.com.
+- Поведение не изменилось.
+
+_(История модуля в этом файле начинается с введения CHANGELOG. Более ранние изменения — в git.)_

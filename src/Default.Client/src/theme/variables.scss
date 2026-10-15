@@ -1,0 +1,123 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+  --app-tabbar-base-height: 56px;
+  /* Space reserved for the fixed bottom tab bar + iPhone home indicator. */
+  --app-tabbar-offset: calc(var(--app-tabbar-base-height) + env(safe-area-inset-bottom, 0px));
+  --app-desktop-topnav-height: 56px;
+  --app-desktop-strip-width: 44px;
+  --app-font-display: 'Syne', sans-serif;
+  --app-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Dark theme (forced). Light tokens kept below for later restore. */
+  --ion-color-primary: #7ed9a8;
+  --ion-color-primary-rgb: 126, 217, 168;
+  --ion-color-primary-contrast: #14181f;
+  --ion-color-primary-contrast-rgb: 20, 24, 31;
+  --ion-color-primary-shade: #6fbf94;
+  --ion-color-primary-tint: #8bddb1;
+
+  --ion-color-secondary: #c8f560;
+  --ion-color-secondary-rgb: 200, 245, 96;
+  --ion-color-secondary-contrast: #14181f;
+  --ion-color-secondary-contrast-rgb: 20, 24, 31;
+  --ion-color-secondary-shade: #b0d854;
+  --ion-color-secondary-tint: #cef670;
+
+  --ion-color-tertiary: #2f3b45;
+  --ion-color-tertiary-rgb: 47, 59, 69;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #29343d;
+  --ion-color-tertiary-tint: #444f58;
+
+  --ion-color-success: #2f9e6c;
+  --ion-color-success-rgb: 47, 158, 108;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #298b5f;
+  --ion-color-success-tint: #44a87b;
+
+  --ion-color-warning: #d9a441;
+  --ion-color-warning-rgb: 217, 164, 65;
+  --ion-color-warning-contrast: #14181f;
+  --ion-color-warning-contrast-rgb: 20, 24, 31;
+  --ion-color-warning-shade: #bf9039;
+  --ion-color-warning-tint: #ddad54;
+
+  --ion-color-danger: #c44b4b;
+  --ion-color-danger-rgb: 196, 75, 75;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #ac4242;
+  --ion-color-danger-tint: #ca5d5d;
+
+  --ion-color-medium: #6b737c;
+  --ion-color-medium-rgb: 107, 115, 124;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #5e656d;
+  --ion-color-medium-tint: #7a8189;
+
+  --ion-color-light: #1b222b;
+  --ion-color-light-rgb: 27, 34, 43;
+  --ion-color-light-contrast: #eef2ef;
+  --ion-color-light-contrast-rgb: 238, 242, 239;
+  --ion-color-light-shade: #181e26;
+  --ion-color-light-tint: #323840;
+
+  /* Near-black surfaces (mobile mockup); slightly softer than pure #000 for OLED readability. */
+  --ion-background-color: #0a0c10;
+  --ion-background-color-rgb: 10, 12, 16;
+  --ion-text-color: #eef2ef;
+  --ion-text-color-rgb: 238, 242, 239;
+
+  --ion-toolbar-background: #0a0c10;
+  --ion-item-background: #12161c;
+  --ion-card-background: #12161c;
+}
+
+@media (min-width: 992px) {
+  /* Desktop browser: no bottom tab bar. Mini App keeps phone tab offset. */
+  html:not(.telegram-mini-app) {
+    --app-tabbar-offset: 0px;
+  }
+}
+
+/*
+ * Light theme (disabled). To restore:
+ * 1. Move these tokens back onto :root (and put dark under prefers-color-scheme).
+ * 2. Switch global.scss to dark.system.css.
+ * 3. Set index.html color-scheme to "light dark".
+ * 4. Restore DEFAULT_PRIMARY_HEX to #1F6F4A in storefront-theme.ts.
+ *
+ * :root {
+ *   --ion-color-primary: #1f6f4a;
+ *   --ion-color-primary-rgb: 31, 111, 74;
+ *   --ion-color-primary-contrast: #ffffff;
+ *   --ion-color-primary-contrast-rgb: 255, 255, 255;
+ *   --ion-color-primary-shade: #1b6241;
+ *   --ion-color-primary-tint: #357d5c;
+ *   --ion-color-secondary: #c8f560;
+ *   --ion-color-secondary-rgb: 200, 245, 96;
+ *   --ion-color-secondary-contrast: #14181f;
+ *   --ion-color-secondary-contrast-rgb: 20, 24, 31;
+ *   --ion-color-secondary-shade: #b0d854;
+ *   --ion-color-secondary-tint: #cef670;
+ *   --ion-color-light: #eef2ef;
+ *   --ion-color-light-rgb: 238, 242, 239;
+ *   --ion-color-light-contrast: #14181f;
+ *   --ion-color-light-contrast-rgb: 20, 24, 31;
+ *   --ion-color-light-shade: #d1d5d2;
+ *   --ion-color-light-tint: #f0f4f1;
+ *   --ion-background-color: #f5f7f4;
+ *   --ion-background-color-rgb: 245, 247, 244;
+ *   --ion-text-color: #14181f;
+ *   --ion-text-color-rgb: 20, 24, 31;
+ *   --ion-toolbar-background: #f5f7f4;
+ *   --ion-item-background: #ffffff;
+ *   --ion-card-background: #ffffff;
+ * }
+ */

@@ -1,0 +1,39 @@
+---
+description: Hybrid modular monolith — host vs modules, truth order, contract safety
+alwaysApply: true
+---
+
+# Hybrid modular monolith
+
+## Hierarchy of truth
+
+1. `.specify/memory/constitution.md`
+2. `docs/architecture/*`
+3. Target project `AGENT_CONTEXT.md` → `DEPENDENCY.md` → `README.md`
+4. Code — if docs conflict, follow Source Of Truth in AGENT_CONTEXT and record Known Debt
+
+Do not invent boundaries when facts are documented.
+
+## Boundaries
+
+- `Default.Api` is composition root / transport shell — **not** a domain module.
+- Host MAY: endpoints, transport DTOs, mapping, DI/startup, orchestration.
+- Host MUST NOT: own domain invariants, grow a hidden business layer, bypass module contracts for persistence/business ops.
+- Modules own business rules; modules MUST NOT reference the host.
+- `.csproj` boundaries are architectural units; host folder layout is not.
+
+## Transitional zones
+
+Legacy orchestration in the host is debt. Prefer extraction when adding business behavior. Do not use transitional code as precedent for new design.
+
+## Contracts
+
+- Do not expose domain entities as API contracts.
+- Prefer strongly-typed `ActionResult<T>` (or equivalent) for OpenAPI/client generation.
+- No silent breaking endpoint/DTO or DI contract changes without explicit scope.
+
+## Before implementing
+
+1. Classify target: host / module / infrastructure / transitional.
+2. Read architecture + module-local docs.
+3. Plan the smallest boundary-respecting change.

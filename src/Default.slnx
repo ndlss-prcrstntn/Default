@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/Default.Abstractions/Default.Abstractions.csproj" />
+    <Project Path="Infrastructure/Default.Cache/Default.Cache.csproj" />
+    <Project Path="Infrastructure/Default.DataAccess/Default.DataAccess.csproj" />
+    <Project Path="Infrastructure/Default.DependencyInjection/Default.DependencyInjection.csproj" />
+    <Project Path="Infrastructure/Default.Ext/Default.Ext.csproj" />
+    <Project Path="Infrastructure/Default.FileStorage/Default.FileStorage.csproj" />
+    <Project Path="Infrastructure/Default.Hosting/Default.Hosting.csproj" />
+    <Project Path="Infrastructure/Default.Logs/Default.Logs.csproj" />
+    <Project Path="Infrastructure/Default.Mail/Default.Mail.csproj" />
+    <Project Path="Infrastructure/Default.Scheduler/Default.Scheduler.csproj" />
+    <Project Path="Infrastructure/Default.SignalR/Default.SignalR.csproj" />
+    <Project Path="Infrastructure/Default.Syntax/Default.Syntax.csproj" />
+    <Project Path="Infrastructure/Default.Web/Default.Web.csproj" />
+  </Folder>
+  <Project Path="Default.Api/Default.Api.csproj" />
+</Solution>

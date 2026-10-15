@@ -1,0 +1,9 @@
+ion-tab-bar {
+  --background: var(--ion-background-color);
+  height: var(--app-tabbar-base-height, 56px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+ion-router-outlet {
+  margin-bottom: var(--app-tabbar-offset, 56px);
+}
