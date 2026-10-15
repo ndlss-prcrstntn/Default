@@ -13,7 +13,7 @@ public class ApplicationDbContext(
 {
     public override int SaveChanges(bool acceptAllChangesOnSuccess)
     {
-        NormalizeCatalogSearchNames();
+        NormalizeSearchNames();
         return base.SaveChanges(acceptAllChangesOnSuccess);
     }
 
@@ -21,7 +21,7 @@ public class ApplicationDbContext(
         bool acceptAllChangesOnSuccess,
         CancellationToken cancellationToken = default)
     {
-        NormalizeCatalogSearchNames();
+        NormalizeSearchNames();
         return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
     }
 
@@ -29,7 +29,7 @@ public class ApplicationDbContext(
     /// Keeps NameNormalized / NicknameNormalized aligned with the display name
     /// for entities that define those columns.
     /// </summary>
-    private void NormalizeCatalogSearchNames()
+    private void NormalizeSearchNames()
     {
         foreach (var entry in ChangeTracker.Entries())
         {

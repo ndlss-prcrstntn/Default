@@ -10,7 +10,7 @@ Shared contracts and cross-cutting types for the Default skeleton — an **Infra
 ## Integration
 
 - **Project references:** none (leaf library).
-- **Consumers:** `Default.Cache`, `Default.DependencyInjection`, `Default.Ext`, `Default.FileStorage`, `Default.Hosting`, `Default.Mail`, `Default.Scheduler`.
+- **Consumers:** `Default.Cache`, `Default.DependencyInjection`, `Default.Ext`, `Default.FileStorage`, `Default.Hosting`, `Default.Mail`, `Default.SignalR`.
 
 ## DI / configuration
 
@@ -19,10 +19,9 @@ Shared contracts and cross-cutting types for the Default skeleton — an **Infra
 
 ## Key files
 
-- `Exceptions\ClientException.cs`
-- `Exceptions\PermissionDeniedException.cs`
-- `Exceptions\ServiceException.cs`
-- `Exceptions\UnauthorizedException.cs`
+- `Exceptions\` — shared client/service exceptions
+- `Realtime\IEntityRealtimePublisher.cs`
+- `Security\ISecurityContext.cs`
 - `IConfigSection.cs`
 - `ITraceEntity.cs`
 - `IVersionExtractor.cs`

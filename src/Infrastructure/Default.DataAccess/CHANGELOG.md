@@ -11,6 +11,10 @@ Substantive module changes (not file lists). New entries at the top. Date format
 
 ## Entries
 
+### 2026-10-15 — Generic search-name normalization
+
+- `ApplicationDbContext` normalizes `Name` / `Nickname` search keys without product-domain naming.
+
 ### 2026-10-15 — CHANGELOG baseline
 
 - Module change history starts here for the skeleton; earlier substantive changes are in git history.

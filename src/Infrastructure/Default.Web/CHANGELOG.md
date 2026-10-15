@@ -11,6 +11,10 @@ Substantive module changes (not file lists). New entries at the top. Date format
 
 ## Entries
 
+### 2026-10-15 — Drop messaging config section
+
+- Removed product-specific bot/messaging config section from the skeleton host helpers.
+
 ### 2026-10-15 — CHANGELOG baseline
 
 - Module change history starts here for the skeleton; earlier substantive changes are in git history.

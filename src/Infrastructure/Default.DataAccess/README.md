@@ -10,7 +10,7 @@ EF Core data access primitives: `DbContext` base types, unit of work, migrations
 ## Integration
 
 - **Project references:** `Default.DependencyInjection`
-- **Consumers:** `Default.Api`, `Default.DataAccess.EntityFramework`, `Default.DataAccess.Models`, `Default.Scheduler`
+- **Consumers:** `Default.Api`, `Default.Scheduler`
 
 ## DI / configuration
 

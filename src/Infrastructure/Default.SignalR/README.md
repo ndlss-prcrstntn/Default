@@ -1,6 +1,6 @@
 # Default.SignalR
 
-ASP.NET Core SignalR helpers for realtime updates: a sample hub and a publisher contract so modules can push typed entity-change notifications to connected clients.
+ASP.NET Core SignalR helpers for realtime updates: `EntityHub` at `/hub/entities` and `IEntityRealtimePublisher` for typed entity-change notifications.
 
 ## Scope
 
@@ -10,7 +10,6 @@ ASP.NET Core SignalR helpers for realtime updates: a sample hub and a publisher 
 ## Integration
 
 - **Consumers:** host (`Default.Api`) maps hubs at startup.
-- Rename sample hub/route names when adopting this skeleton for a product.
 
 ## See also
 

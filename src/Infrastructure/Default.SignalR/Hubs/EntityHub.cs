@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace Default.SignalR.Hubs;
 
+/// <summary>Sample authorized hub for entity-change subscriptions by type.</summary>
 [Authorize]
-public class CatalogHub : Hub
+public class EntityHub : Hub
 {
-    public const string HubPath = "/hub/catalog";
+    public const string HubPath = "/hub/entities";
     public const string EntityChangedEvent = "entityChanged";
 
-    public static string TypeGroup(int entityType) => $"catalog:{entityType}";
+    public static string TypeGroup(int entityType) => $"entity:{entityType}";
 
     public Task JoinType(int entityType)
         => Groups.AddToGroupAsync(Context.ConnectionId, TypeGroup(entityType));
@@ -19,9 +20,9 @@ public class CatalogHub : Hub
         => Groups.RemoveFromGroupAsync(Context.ConnectionId, TypeGroup(entityType));
 }
 
-public sealed class CatalogRealtimePublisher(IHubContext<CatalogHub> hub) : ICatalogRealtimePublisher
+public sealed class EntityRealtimePublisher(IHubContext<EntityHub> hub) : IEntityRealtimePublisher
 {
-    public Task PublishAsync(CatalogEntityChangedMessage message, CancellationToken cancellationToken = default)
+    public Task PublishAsync(EntityChangedMessage message, CancellationToken cancellationToken = default)
     {
         var payload = new
         {
@@ -33,7 +34,7 @@ public sealed class CatalogRealtimePublisher(IHubContext<CatalogHub> hub) : ICat
         };
 
         return hub.Clients
-            .Group(CatalogHub.TypeGroup(message.EntityType))
-            .SendAsync(CatalogHub.EntityChangedEvent, payload, cancellationToken);
+            .Group(EntityHub.TypeGroup(message.EntityType))
+            .SendAsync(EntityHub.EntityChangedEvent, payload, cancellationToken);
     }
 }

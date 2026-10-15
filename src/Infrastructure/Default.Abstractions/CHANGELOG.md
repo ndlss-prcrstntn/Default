@@ -11,6 +11,11 @@ Substantive module changes (not file lists). New entries at the top. Date format
 
 ## Entries
 
+### 2026-10-15 — Strip product-domain contracts
+
+- Removed product-specific messaging, storefront, catalog-query, and ACL role helpers.
+- Realtime contract renamed to `IEntityRealtimePublisher` / `EntityChangedMessage`.
+
 ### 2026-10-15 — CHANGELOG baseline
 
 - Module change history starts here for the skeleton; earlier substantive changes are in git history.

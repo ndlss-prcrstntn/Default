@@ -2,6 +2,10 @@
 
 ## Entries
 
+### 2026-10-15 — Product-neutral SignalR wiring
+
+- Host maps generic `EntityHub` (`/hub/entities`) via `MapDefaultSignalR`.
+
 ### 2026-10-15 — Skeleton host
 
 - Composition root wires infrastructure (logs, data access, mail, S3, JWT, CORS, SignalR, Hangfire).
