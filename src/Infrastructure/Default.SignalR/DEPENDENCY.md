@@ -1,29 +1,44 @@
-﻿# DEPENDENCY
+# Default.SignalR — Dependencies
 
 ## Framework
-- TargetFramework: 
-net8.0
-- Nullable: 
-enable
-- ImplicitUsings: 
-enable
 
+- Target framework: `net10.0`
+- Nullable: `enable`
+- Implicit usings: `enable`
 
-## NuGet Packages
-- Microsoft.AspNetCore.SignalR (1.2.0)
-- Microsoft.AspNetCore.SignalR.Client (8.0.14)
-- Microsoft.Extensions.DependencyInjection (8.0.1)
-- Microsoft.Extensions.DependencyInjection.Abstractions (8.0.2)
+## NuGet packages
 
-## Project References
-- None
+- (framework / transitive only)
+
+## Internal project references
+
+- Default.Abstractions
 
 ## Consumers
-- None
 
-## Dependency Rules
-- Allowed: directions declared in ProjectReference.
-- Forbidden: circular or reverse host coupling without decision.
+- Default.Api
+
+## Architectural Dependency Rules
+
+**Allowed:**
+
+- This library → approved Infrastructure peers listed above
+- Host / modules → this library
+
+**Forbidden without an architecture decision:**
+
+- This library → ``Default.Api``
+- Circular infrastructure references
+- Reaching into module internals from infrastructure
 
 ## Contract Stability
-- Public types and extension methods are high-impact.
+
+- Public types, DI extension methods, and config section shapes are high-impact.
+- Prefer additive changes; document breaking changes in ``CHANGELOG.md`` and bump ``src/VERSION``.
+
+## Safe Change Checklist
+
+- [ ] Public interfaces preserved or intentionally versioned
+- [ ] DI registration still valid in the host
+- [ ] ``CHANGELOG.md`` entry if substantive
+- [ ] ``src/VERSION`` bumped for a shipped PR

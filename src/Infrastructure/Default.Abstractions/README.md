@@ -1,10 +1,34 @@
-# Default.Abstractions  Проект Default.Abstractions в составе Default.  ## Назначение - Категория: Infrastructure Module   ## Scope - Реализует ответственность своего слоя. - Не должен нарушать границы слоев.  ## Integration - ProjectReference: None - Consumers: Default.Cache, Default.DependencyInjection, Default.Ext, Default.FileStorage, Default.Hosting, Default.Mail, Default.Scheduler   ## DI / Config - DI files: None - Config sections: IConfigSection.cs   ## Key Files
-- Exceptions\ClientException.cs
-- Exceptions\PermissionDeniedException.cs
-- Exceptions\ServiceException.cs
-- Exceptions\UnauthorizedException.cs
-- IConfigSection.cs
-- ITraceEntity.cs
-- IVersionExtractor.cs
+# Default.Abstractions
 
-См. AGENT_CONTEXT.md и DEPENDENCY.md.
+Shared contracts and cross-cutting types for the Default skeleton — an **Infrastructure** library at the bottom of the dependency graph.
+
+## Scope
+
+- Public interfaces, config section markers, and shared exceptions.
+- Must not reference the host or domain modules.
+
+## Integration
+
+- **Project references:** none (leaf library).
+- **Consumers:** `Default.Cache`, `Default.DependencyInjection`, `Default.Ext`, `Default.FileStorage`, `Default.Hosting`, `Default.Mail`, `Default.Scheduler`.
+
+## DI / configuration
+
+- **DI extensions:** none in this project.
+- **Config sections:** `IConfigSection.cs` pattern.
+
+## Key files
+
+- `Exceptions\ClientException.cs`
+- `Exceptions\PermissionDeniedException.cs`
+- `Exceptions\ServiceException.cs`
+- `Exceptions\UnauthorizedException.cs`
+- `IConfigSection.cs`
+- `ITraceEntity.cs`
+- `IVersionExtractor.cs`
+
+## See also
+
+- [AGENT_CONTEXT.md](./AGENT_CONTEXT.md)
+- [DEPENDENCY.md](./DEPENDENCY.md)
+- [CHANGELOG.md](./CHANGELOG.md)

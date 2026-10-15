@@ -41,4 +41,4 @@ Follow `docs/.developer/command-rules.md`:
 
 ## Out of scope for this skeleton
 
-Add separately per product: CI/CD, Docker, deploy runbooks, domain content rules, auth product model.
+Add separately per product: CI/CD, Docker, deploy runbooks, and your chosen auth / identity model.

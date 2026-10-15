@@ -1,38 +1,43 @@
-# AGENT_CONTEXT
+# Default.Web — Agent Context
 
 ## Module Purpose
-Default.Web
- is a 
-Infrastructure Module
-.
 
-## Source Of Truth
-1. 
-Default.Web.csproj
-2. DI/config files in this project
-3. Public contracts in source code
+ASP.NET Core web helpers: JWT/CORS config sections, API error shapes, JSON converters.
 
-## Runtime Wiring
-- TargetFramework: 
-net10.0
-- Nullable: 
-not set
-- ImplicitUsings: 
-enable
+## Source Of Truth Priority
 
+1. Code and `Default.Web.csproj` in this project.
+2. Host wiring in ``Default.Api`` when this library is registered there.
+3. This file, then ``DEPENDENCY.md``, then ``README.md``.
 
-## External Call Sites
-- Consumers: 
-Default.Api
+## Current Runtime Wiring
 
+- Target framework: `net10.0`
+- Nullable: `unset`
+- Implicit usings: `enable`
 
-## Invariants
-- Keep project boundary of its category.
-- Avoid breaking public contracts without syncing consumers.
+## External Call Sites (High Impact)
 
-## Editing Rules
-- MUST NOT create circular references.
-- MUST NOT move unrelated layer logic here.
+- Consumers: Default.Api
 
-## Verification
-- dotnet build src/Default.sln
+## Behavior Invariants
+
+- Stay an infrastructure capability — do not absorb domain rules.
+- Preserve public contracts unless the task explicitly versions a breaking change.
+- Keep dependency direction: modules/host → infrastructure; never reverse into the host.
+
+## Known Debt / Sharp Edges
+
+- Rename sample hub/route/type names to match your product when you adopt this skeleton.
+
+## Editing Rules For Agents
+
+- Do not create circular project references.
+- Do not move unrelated layer logic into this library.
+- Prefer synchronized updates across consumers when changing public surfaces.
+
+## Minimal Verification After Changes
+
+```bash
+dotnet build src/Default.slnx
+```

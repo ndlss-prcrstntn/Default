@@ -2,7 +2,7 @@ You are working in module `<MODULE_PATH>` of the .NET `<Project>` solution.
 
 Generate 3 documents for AI agents:
 
-- `README.md` (team language — Russian or English per repo convention)
+- `README.md` (English)
 - `AGENT_CONTEXT.md` (English)
 - `DEPENDENCY.md` (English)
 

@@ -1,26 +1,26 @@
 # <Project.ModuleName>
 
-Кратко: что делает модуль (1–2 предложения).
+Brief summary of what the module does (1–2 sentences).
 
 ## Scope
 
-**Делает:**
+**Does:**
 
 - …
 
-**Не делает:**
+**Does not:**
 
-- … (явные границы ответственности)
+- … (explicit responsibility boundaries)
 
 ## Public contract
 
 - `I…` — …
-- Основные операции: …
+- Main operations: …
 
 ## Integration
 
-- DI: `services.Add…Module(...)` (или фактический метод)
-- Подключается из: `<Host.Api>` / …
+- DI: `services.Add…Module(...)` (or the actual extension method name)
+- Wired from: `<Host.Api>` / …
 
 ## Configuration
 
@@ -34,7 +34,7 @@
 
 ## Behavior notes
 
-- Инварианты / lifecycle / логирование — кратко.
+- Invariants, lifecycle, logging — keep this short.
 
 ## Key files
 

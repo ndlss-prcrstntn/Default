@@ -64,9 +64,9 @@ Every extractable project should have:
 
 | File | Language | Role |
 | --- | --- | --- |
-| `README.md` | human (team language) | what / scope / integration |
+| `README.md` | English | what / scope / integration |
 | `AGENT_CONTEXT.md` | English | invariants, wiring, edit rules |
 | `DEPENDENCY.md` | English | packages, refs, coupling |
-| `CHANGELOG.md` | team language | substantive history |
+| `CHANGELOG.md` | English | substantive history |
 
 Copy starters from `templates/module/`.
